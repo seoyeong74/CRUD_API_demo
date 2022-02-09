@@ -5,9 +5,9 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity
-data class TemplateModel(
+data class SimpleModel(
         @Id
         @GeneratedValue
         val id: Int,
-        val templateName: String,
-        val content: String)
+        val Username: String,
+        val password: String)
