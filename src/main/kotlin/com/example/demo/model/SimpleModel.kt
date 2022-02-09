@@ -8,6 +8,6 @@ import javax.persistence.Id
 data class SimpleModel(
         @Id
         @GeneratedValue
-        val id: Int,
-        val Username: String,
+        val id: Int? = null,
+        val username: String,
         val password: String)

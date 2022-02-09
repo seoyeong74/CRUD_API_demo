@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository
 
 interface Repository: CrudRepository<SimpleModel,Int> {
 
-    fun findByUsername(Name: String): SimpleModel?
+    fun findByusername(Name: String): SimpleModel?
 
     fun findAllBy(): List<SimpleModel>?
 

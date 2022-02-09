@@ -16,7 +16,7 @@ class ServiceImpl constructor(@Autowired private val userRepository: Repository)
             userRepository.findById(id).orElse(null)
 
     override fun getUserByName(name: String): SimpleModel? {
-        return userRepository.findByUsername(name)
+        return userRepository.findByusername(name)
     }
 
     override fun deleteUserByID(id: Int) {

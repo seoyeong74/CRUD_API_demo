@@ -1,6 +1,7 @@
 package com.example.demo.controller
 
 import com.example.demo.model.SimpleModel
+import com.example.demo.model.CreateSimpleModel
 import com.example.demo.service.Service
 
 import org.springframework.beans.factory.annotation.Autowired
@@ -36,8 +37,8 @@ class Controller {
     }
 
     @PostMapping("/demo/user")
-    private fun postTemplate(@RequestBody simpleModel: SimpleModel): ResponseEntity<Any> {
-        service.saveUser(simpleModel)
+    private fun postTemplate(@RequestBody simpleModel: CreateSimpleModel): ResponseEntity<Any> {
+        service.saveUser(simpleModel.toEntity())
         return ResponseEntity
                 .ok()
                 .body(true)
@@ -53,11 +54,11 @@ class Controller {
 
     @PutMapping("/demo/user/{id}")
     fun updateUser(@PathVariable("id") id: Int, @RequestBody simpleModel: SimpleModel ):ResponseEntity<Any> {
-        val cCricketer  = SimpleModel(
+        val changeModel  = SimpleModel(
                 id = simpleModel.id
-                , Username = simpleModel.Username
+                , username = simpleModel.username
                 , password = simpleModel.password)
-        service.saveUser(cCricketer)
+        service.saveUser(changeModel)
         return ResponseEntity
                 .ok()
                 .body(true)
