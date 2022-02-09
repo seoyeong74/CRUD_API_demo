@@ -16,28 +16,28 @@ class Controller {
     private lateinit var service: Service
 
     @GetMapping("/demo/users")
-    private fun getTemplates(): ResponseEntity<Any> {
+    private fun getUsers(): ResponseEntity<Any> {
         return ResponseEntity
                 .ok()
                 .body(service.getAllUsers())
     }
 
     @GetMapping("/demo/user/{id}")
-    private fun getTemplateById(@PathVariable id: Int): ResponseEntity<Any> {
+    private fun getUserById(@PathVariable id: Int): ResponseEntity<Any> {
         return ResponseEntity
                 .ok()
                 .body(service.getUser(id))
     }
 
     @GetMapping("/demo/user")
-    private fun getTemplateByName(@RequestParam(value = "name") name: String): ResponseEntity<Any?> {
+    private fun getUserByName(@RequestParam(value = "name") name: String): ResponseEntity<Any?> {
         return ResponseEntity
                 .ok()
                 .body(service.getUserByName(name))
     }
 
     @PostMapping("/demo/user")
-    private fun postTemplate(@RequestBody simpleModel: CreateSimpleModel): ResponseEntity<Any> {
+    private fun postUser(@RequestBody simpleModel: CreateSimpleModel): ResponseEntity<Any> {
         service.saveUser(simpleModel.toEntity())
         return ResponseEntity
                 .ok()
