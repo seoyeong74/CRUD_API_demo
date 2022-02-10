@@ -1,4 +1,4 @@
- Sample CRUD API
+ Simple CRUD API
 -------------------------------
 It is a CRUD API made with a simple model with username and password. All GET, POST, PUT, and DELETE functions were implemented. The API was tested using POSTMan.
 
